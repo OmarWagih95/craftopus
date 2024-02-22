@@ -1,12 +1,14 @@
-const { axios } = require("axios");
-const userAPI = process.env.NEXT_PUBLIC__USER_TOKEN;
-const apiUrl='http//localhost:3000/api'
+const {default: axios} = require('axios')
 
-const axiosClient =axios.create({
-    baseUrl: apiUrl,
-    Headers:{
-        Authorization:`Bearer: ${userAPI}`
-    }
-})
+const apiKey=process.env.NEXT_PUBLIC_USER_TOKEN;
+const apiUrl='http://localhost:1337/api'
 
-export default axiosClient;
+const axiosClient = axios.create({
+	baseURL: apiUrl,
+	headers:{
+		Authorization: `Bearer ${apiKey}`
+	}
+});
+
+
+export default axiosClient
