@@ -14,7 +14,7 @@ function ProductSection() {
   })
     
   return (
-    <div className='bg-gray-900'><ProductList productList={productList}/></div>
+    <div id='ourProducts' className='bg-gray-900 h-screen'><ProductList productList={productList}/></div>
   )
 }
 

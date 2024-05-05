@@ -30,3 +30,17 @@ body {
     text-wrap: balance;
   }
 }
+.active{
+  @apply 
+  text-purple-800;
+  @apply 
+
+  border-purple-800;
+}
+.dropdown {
+  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-gray-900 min-w-[210px] flex flex-col gap-2 justify-center items-center;
+}
+body{
+  @apply
+  overflow-x-hidden;
+}

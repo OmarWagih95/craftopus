@@ -19,12 +19,13 @@ const path = usePathname()
       setProductData(response.data.data)
     }
       )
-      console.log(productData.attributes?.images.data[0].attributes.url);
+      // console.log(productData.attributes?.images.data[0].attributes.url);
   return (
     <div className='px-10 py-6 md:px-20 md:py-6 bg-gray-900 justify-items-center' >
       <BreadCumber path={path}/>
       <div className='px-20 grid gap-4 sm:gap-5 grid-cols-1  sm:grid-cols-2 py-6 justify-around'>
-        <ProductBanner bannerURL={productData.attributes?.images.data[0].attributes.url}/> 
+        <ProductBanner bannerURL={productData.attributes?.banner.data.attributes.url}/> 
+        {/* <ProductBanner bannerURL={productData.attributes?.banner.data[0].attributes.url}/>  */}
        <ProductInfo product={productData}/>
       </div>
 
