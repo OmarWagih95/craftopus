@@ -7,10 +7,12 @@ import { IoMenuSharp } from "react-icons/io5";
 
 import { useState } from 'react'
 const links =[
-  {name:'Products',target:'ourProducts',offset:-60},
+  {name:'Categories',target:'ourCategories',offset:-60},
   {name:'Finished projects',target:'latestProjects',offset:-60},
   {name:'About',target:'about',offset:-60},
   {name:'Feedbacks',target:'feedback',offset:-60},
+  {name:'Contact us',target:'contactUS',offset:-60},
+
 ]
 function MobileNav() {
     const [toggleDropDown, settoggleDropDown] = useState(false);

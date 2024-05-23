@@ -7,7 +7,7 @@ function ProductBanner(params) {
   return (
       params.bannerURL?
     <div className='rounded-lg'>
-        <Image alt='productBanner' width={400} height={400} src={params.bannerURL}></Image>
+        <Image alt='productBanner' width={350} height={350} src={params.bannerURL}></Image>
     </div>
        : <div className='w-[400px] h-[360px] bg-gray-400 rounded-lg animate-pulse'></div>
     

@@ -8,7 +8,7 @@ import MobileNav from './MobileNav';
 
 function Header() {
   return (
-    <header className="fixed w-screen bg-gray-900  text-white shadow-md">
+    <header className="fixed z-10 w-screen bg-gray-900  text-white shadow-md">
       {/* //desktop Nav */}
  <Nav></Nav>
  {/* small devices */}

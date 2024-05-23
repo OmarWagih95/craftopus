@@ -4,16 +4,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaShoppingCart } from "react-icons/fa";
 import{Link as ScrollLink } from 'react-scroll';
+import { useContext } from 'react';
+import { cartContext } from '../_context/CartContext';
 
 const links =[
-    {name:'Products',target:'ourProducts',offset:-60},
-    {name:'Finished projects',target:'latestProjects',offset:-60},
-    {name:'About',target:'about',offset:-60},
-    {name:'Feedbacks',target:'feedback',offset:-60},
+    {name:'Categories',target:'/#ourCategories',offset:-60},
+    {name:'Finished projects',target:'/#latestProjects',offset:-60},
+    {name:'About',target:'/#about',offset:-60},
+    {name:'Feedbacks',target:'/#feedback',offset:-60},
+    {name:'Contact us',target:'/#contactUS',offset:-60},
   ]
+  const {cart,setCart}=useContext(cartContext);
 function Nav(props) {
   return (
-    <div className="mx-auto hidden lg:flex flex h-16 max-w-screen-xl items-center gap-8 px-4 lg:px-6 lg:px-8 justify-between">
+    <section className="mx-auto hidden lg:flex flex h-16 max-w-screen-xl items-center gap-8 px-4 lg:px-6 lg:px-8 justify-between">
     <div className="flex gap-4 px-3  items-center justify-between">
       
       <a className=" block text-teal-600" href="#">
@@ -32,7 +36,7 @@ function Nav(props) {
           <ul className="flex items-center gap-6 text-sm">
           {links.map((link,index)=>{
               return(        <li className="  text-gray-500 transition hover:text-gray-500/75">
-                <ScrollLink 
+                {/* <ScrollLink 
                 className='pb-2 border-b-2 border-gray-900'
                 offset={link.offset}
                 to={link.target}
@@ -41,7 +45,20 @@ function Nav(props) {
                 key={index}
                 activeClass='active'>
                   {link.name}
-                  </ScrollLink>
+                  </ScrollLink> */}
+                  <Link  className='pb-2 border-b-2 border-gray-900'
+                offset={link.offset}
+                reloadCurrent={true}
+                // replace={true}
+                href={link.target}
+                smooth 
+                scroll={true}
+                spy
+                key={index}
+                activeClass='active'>
+                  {link.name}
+                  
+                  </Link>
   
                 
                 {/* <a className="text-gray-500 transition hover:text-gray-500/75" href="#ourProducts"> Products </a> */}
@@ -95,9 +112,9 @@ function Nav(props) {
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          <div className='flex rounded-lg px-3 py-3 bg-gray-600 text-gray-500 gap-2'>
+          <div className='flex items-center rounded-lg px-3 py-3 bg-gray-600 text-gray-500 gap-2'>
             <FaShoppingCart />
-            <h2 className= 'text-gray-500'>0</h2>
+            <h2 className= 'text-gray-500'>{cart.length}</h2>
           </div>
         {/* <div className="flex items-center gap-4">
           <div className="sm:flex sm:gap-4">
@@ -118,7 +135,7 @@ function Nav(props) {
   
  
         </div> */}
-    </div>
+    </section>
   )
 }
 

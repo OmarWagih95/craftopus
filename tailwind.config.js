@@ -12,6 +12,7 @@ module.exports = {
         // "gradient-conic":
         //   "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
           'hero':"url(/craftopusWeb.jpg)",
+          'dodo':"url(/paintpurple.png)"
       },
       colors:{
         primary :'#D04848',

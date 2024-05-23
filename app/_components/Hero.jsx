@@ -12,14 +12,15 @@ function Hero() {
     <section className=" text-white">
       <div className='grid-cols-1 lg:grid-cols-2 flex w-full h-full  h-screen items-stretch justify-center lg:justify-normal bg-hero bg-center lg:bg-cover'>
 
-  <div className="px-4 mt-20 lg:mt-20 items-center basis 5/5 lg:basis-3/5 py-32 h-screen lg:flex ">
+  <div className="px-4 mt-20 lg:mt-20 items-center flex lg:basis-3/5 py-32 h-screen lg:flex ">
     <div className="text-center h-full items-stretch place-items-stretch">
       <motion.h4
+      
       variants={fadeIn('down',0.4)}
       initial='hidden'
       whileInView={'show'}
       viewport={{once:false,amount:0.2}}
-        className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-2xl font-extrabold text-transparent lg:text-4xl"
+        className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-2xl sm:text-3xl font-extrabold text-transparent lg:text-4xl"
       >
         The place where your imagination
 
@@ -31,7 +32,7 @@ function Hero() {
          initial='hidden'
          whileInView={'show'}
          viewport={{once:false,amount:0.2}}
-      className="mx-auto mt-4 max-w-xl lg:text-xl/relaxed">
+      className="mx-auto mt-4 max-w-xl text-xl lg:text-2xl/relaxed">
 don't waist time      </motion.p>
 
       <motion.div 
