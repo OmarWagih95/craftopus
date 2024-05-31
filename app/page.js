@@ -8,13 +8,11 @@ import Feedback from "./_components/Feedback";
 export default function Home() {
   return (
    <div className="overflow-x-hidden"><Hero/>
-   <cartContext>
 
    <CategoriesSection/>
    <LatestProjects/>
    <About/>
    <Feedback/>
-   </cartContext>
    </div>
   );
 }

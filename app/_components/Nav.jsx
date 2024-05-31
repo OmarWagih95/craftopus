@@ -3,9 +3,11 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaShoppingCart } from "react-icons/fa";
+import { FaGift } from "react-icons/fa6";
+
 import{Link as ScrollLink } from 'react-scroll';
 import { useContext } from 'react';
-import { cartContext } from '../_context/CartContext';
+// import { cartContext } from '../_context/CartContext';
 
 const links =[
     {name:'Categories',target:'/#ourCategories',offset:-60},
@@ -14,10 +16,9 @@ const links =[
     {name:'Feedbacks',target:'/#feedback',offset:-60},
     {name:'Contact us',target:'/#contactUS',offset:-60},
   ]
-  const {cart,setCart}=useContext(cartContext);
-function Nav(props) {
+  function Nav(props) {
   return (
-    <section className="mx-auto hidden lg:flex flex h-16 max-w-screen-xl items-center gap-8 px-4 lg:px-6 lg:px-8 justify-between">
+    <section className="mx-auto hidden lg:flex flex w-screen h-16 max-w-screen-xl items-center gap-8 px-4 lg:px-6 lg:px-8 justify-between">
     <div className="flex gap-4 px-3  items-center justify-between">
       
       <a className=" block text-teal-600" href="#">
@@ -97,7 +98,8 @@ function Nav(props) {
         </nav>
   
       </div>
-      <button
+      <div className='flex'></div>
+      {/* <button
             className="block  rounded bg-gray-700 p-2.5 text-white transition hover:text-gray-300/75 md:hidden"
           >
             <span className="sr-only">Toggle menu</span>
@@ -111,11 +113,8 @@ function Nav(props) {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-          </button>
-          <div className='flex items-center rounded-lg px-3 py-3 bg-gray-600 text-gray-500 gap-2'>
-            <FaShoppingCart />
-            <h2 className= 'text-gray-500'>{cart.length}</h2>
-          </div>
+          </button> */}
+        
         {/* <div className="flex items-center gap-4">
           <div className="sm:flex sm:gap-4">
             <a

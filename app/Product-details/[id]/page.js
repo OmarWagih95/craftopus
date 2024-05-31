@@ -1,5 +1,5 @@
 'use client'
-import BreadCumber from '@/app/_components/BreadCumber';
+import BreadCrumb from '../_components/BreadCrumb';
 import ProductsApi from '@/app/_utils/ProductsApi';
 import React, {useEffect,useState} from 'react'
 import ProductBanner from '../_components/ProductBanner';
@@ -28,11 +28,14 @@ const path = usePathname()
       )
       // console.log(productData.attributes?.images.data[0].attributes.url);
   return (
-    <div className='px-10 pt-24 md:px-20 md:py-6 bg-gray-900 justify-items-center min-h-screen h-auto' >
-      {/* <BreadCumber path={path}/> */}
-      <div className='px-20 grid py-16 gap-4 sm:gap-5 grid-cols-1  sm:grid-cols-2  justify-around'>
+    <div className='px-4 lg:px-20 pt-6 lg:pt-6 md:px-20 md:py-6 bg-gray-900 justify-items-center min-h-screen h-auto' >
+      <BreadCrumb  path={path} 
+      categorName={productData.attributes?.category.data.attributes.categoryName} 
+      productName={productData.attributes?.productName}
+      />
+      <div className='lg:px-20 grid py-7  gap-4 sm:gap-5 grid-cols-1  lg:grid-cols-2  justify-around'>
       <div className='flex flex-col'>
-       <div className='flex items-center'>
+       <div className='flex items-center justify-center'>
 
        <FaAngleLeft  onClick={()=>{
         if(currentIndex>0){

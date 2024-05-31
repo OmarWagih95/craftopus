@@ -47,7 +47,7 @@ don't waist time      </motion.p>
           className=" w-full rounded border border-purple-700 bg-purple-600 px-12 py-3 text-sm font-medium text-white hover:bg-purple-800 hover:text-white focus:outline-none focus:ring active:text-opacity-75 active:border-none sm:w-auto"
           // href="#ourProducts" 
           offset={-60}
-                to={'ourProducts'}
+                to={'ourCategories'}
                 smooth 
                 spy
         
