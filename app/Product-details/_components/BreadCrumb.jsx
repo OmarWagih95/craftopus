@@ -15,7 +15,7 @@ function BreadCrumb({path,categorName,productName}) {
     <li className="flex items-center">
       <Link
         href="/"
-        className="flex h-10 items-center gap-1.5 bg-gray-100 px-4 transition hover:text-gray-900 dark:bg-gray-900 dark:hover:text-white"
+        className="flex h-5 lg:h-10 items-center gap-1.5 bg-gray-100 px-1  lg:px-4 transition hover:text-gray-900 dark:bg-gray-900 dark:hover:text-white"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ function BreadCrumb({path,categorName,productName}) {
           />
         </svg>
 
-        <span className="text-xs font-medium"> Home </span>
+        <span className="text-[10px] lg:text-sm font-medium"> Home </span>
       </Link>
     </li>
 
@@ -44,7 +44,7 @@ function BreadCrumb({path,categorName,productName}) {
 
       <Link
         href="/#ourCategories"
-        className="flex h-10 items-center bg-white pe-4 ps-8 text-xs font-medium transition hover:text-gray-900 dark:bg-gray-800 dark:hover:text-white"
+        className="flex h-10 items-center text-[10px] text-[10px] bg-white pe-4 ps-8 lg:text-xs font-medium transition hover:text-gray-900 dark:bg-gray-800 dark:hover:text-white  "
       >
         Categories
       </Link>
@@ -58,7 +58,7 @@ function BreadCrumb({path,categorName,productName}) {
       <Link
         onClick={router.back}   
         href={''}
-             className="flex h-10 items-center bg-white pe-4 ps-8 text-xs font-medium transition hover:text-gray-900 dark:bg-gray-900 dark:hover:text-white"
+             className="truncate flex h-10 items-center bg-white pe-4 ps-8 text-[10px] lg:text-xs font-medium transition hover:text-gray-900 dark:bg-gray-900 dark:hover:text-white"
       >
         {categorName}
       </Link>
@@ -71,7 +71,7 @@ function BreadCrumb({path,categorName,productName}) {
 
       <Link
         href="#"
-        className="flex h-10 items-center bg-white pe-4 ps-8 text-xs font-medium transition hover:text-gray-900 dark:bg-gray-800 dark:hover:text-white"
+        className="flex h-10 items-center bg-white pe-4 ps-8 text-[10px] lg:text-xs font-medium transition hover:text-gray-900 dark:bg-gray-800 dark:hover:text-white"
       >
         {productName}
       </Link>

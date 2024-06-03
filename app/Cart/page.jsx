@@ -10,10 +10,10 @@ function page() {
   const{cart,setCart}=useContext(cartContext)
   return (
     <section>
-  <div className="mx-auto bg-gray-900 max-w-screen-xl min-h-screen h-auto px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+  <div className="mx-auto bg-gray-900 max-w-screen-xl min-h-screen h-auto px-4 py-8 sm:px-6 sm:py-16 lg:px-8">
     <div className="mx-auto mt-4 max-w-3xl">
       <header className="text-center">
-        <h1 className="text-xl font-bold text-white sm:text-3xl">Your Gift Box</h1>
+        <h1 className="text-xl font-bold text-white max-lg:mt-16 sm:text-3xl">Your Gift Box</h1>
       </header>
 
       <div className="mt-8">

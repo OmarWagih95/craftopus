@@ -62,10 +62,7 @@ function page() {
         deposite:total*0.4
       }
     };
-   CartApi.confirmOrder(data).then((res) =>{
-    console.log('success');
-    setCart([])
-     Swal.fire({
+        Swal.fire({
       background:'#1F2937',
       color:'white',
       toast:true,
@@ -77,7 +74,22 @@ function page() {
     timer: 4000
   })
   router.push('/#ourCategories');
-  })
+  //  CartApi.confirmOrder(data).then((res) =>{
+  //   console.log('success');
+  //   setCart([])
+  //    Swal.fire({
+  //     background:'#1F2937',
+  //     color:'white',
+  //     toast:true,
+  //     iconColor:'#7E22CE',
+  //   position: "center",
+  //   icon: "success",
+  //   title: "your order request has been sent wait for confirmation on whatsapp soon",
+  //   showConfirmButton: false,
+  //   timer: 4000
+  // })
+  // router.push('/#ourCategories');
+  // })
   }
 
 
@@ -176,7 +188,7 @@ on onSubmit={(e)=>{e.preventDefault();
                 </div>
             </div>
         </form>
-        <div className=' bg-gray-900 w-full h-screen   justify-center items-start mt-32 p-10'>
+        <div className=' bg-gray-900 w-full h-auto lg:h-screen   justify-center items-start mt-32 p-10'>
             <h1 className='text-white font-bold'>Order Summary</h1>
             
       <div className="mt-8">

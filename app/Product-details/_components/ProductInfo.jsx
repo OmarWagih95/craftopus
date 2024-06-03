@@ -19,12 +19,12 @@ function ProductInfo(params) {
   // console.log(params.product.attributes?.description[0].children[0].text)
   console.log(`${params.product.id} hna`);
   return (
-    params.product.attributes?
+    params.product?
     <div className='text-white items-center justify-items-center justify-center'>
-      <h2 className='font-bold text-[20px] justify-items-center'>{params.product.attributes?.productName}</h2>
-      <h2 className='text-gray-400 text-[16px]'>{params.product.attributes.category.data.attributes.categoryName}</h2>
-      <h2 className='mt-5 font-light'>{params.product.attributes?.description}</h2>
-      <h2 className='text-white text-[26px] font-bold'>{params.product.attributes?.price} <span className='text-purple-700'>$</span>
+      <h2 className='font-bold text-[20px] justify-items-center'>{params.product.name}</h2>
+      <h2 className='text-gray-400 text-[16px]'>{params.categoryName}</h2>
+      <h2 className='mt-5 font-light'>{params.product.description}</h2>
+      <h2 className='text-white text-[26px] font-bold'>{params.product.price} <span className='text-purple-700'>$</span>
 </h2>
 {/* <div className='grid  justify-items-center'> */}
 <div className='flex flex-row lg:flex-col items-start justify-between'>
@@ -48,11 +48,11 @@ function ProductInfo(params) {
   if(productQuantity>0){
       setCart(oldCart=>[...oldCart,{
         
-        title:params.product.attributes?.productName,
-        imgUrl:params.product.attributes?.banner.data[0].attributes.url,
+        title:params.product.name,
+        imgUrl:params.product.images[0],
         productID:params.product.id,
         quantity:productQuantity,
-        price:params.product.attributes?.price
+        price:params.product.price
       }])
       console.log('done adding succesfully');
       // toast("your product added to cart successfully");
@@ -70,7 +70,7 @@ function ProductInfo(params) {
 )
   
     }
-}} className='flex gap-3 absolute -left-36 -top-1 lg:mt-5 rounded-lg items-center bg-purple-800 px-3 py-3 hover:bg-purple-600'><FaShoppingCart /> add to cart</button>
+}} className='flex gap-3 lg:relative absolute lg:left-0 -left-36 -top-1 lg:mt-5 rounded-lg items-center bg-purple-800 px-3 py-3 hover:bg-purple-600'><FaShoppingCart /> add to cart</button>
 </div>
 </div>
 
