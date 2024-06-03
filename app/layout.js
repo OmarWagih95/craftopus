@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
       setAppearWhats(false)
     }
   }
-  window.addEventListener('scroll',appearWhatsApp);
+  // window.addEventListener('scroll',appearWhatsApp);
   const [cart,setCart]=useState([]);
   return (
     <cartContext.Provider value={{cart,setCart}}>
