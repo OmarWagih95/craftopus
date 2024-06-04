@@ -6,19 +6,28 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaGift } from "react-icons/fa6";
 
 import{Link as ScrollLink } from 'react-scroll';
+import { useRouter } from  'next/navigation';
 import { useContext } from 'react';
+import { usePathname } from 'next/navigation';
 // import { cartContext } from '../_context/CartContext';
 
-const links =[
-    {name:'Categories',target:'/#ourCategories',offset:-60},
-    // {name:'Finished projects',target:'/#latestProjects',offset:-60},
-    {name:'About',target:'/#about',offset:-60},
-    // {name:'Feedbacks',target:'/#feedback',offset:-60},
-    {name:'Contact us',target:'/#contactUS',offset:-60},
-  ]
-  function Nav(props) {
+function Nav(props) {
+  const path= usePathname()
+  
+    const router= useRouter();
+
+    const links =[
+        {name:'Home',target:'heroSec',offset:-60 ,onclick:()=>  router.push('/#heroSec')
+      },
+        {name:'Categories',target:'ourCategories',offset:-60 ,onclick:()=>  router.push('/#ourCategories')
+      },
+        // {name:'Finished projects',target:'/#latestProjects',offset:-60},
+        {name:'About',target:'about',offset:-60,onclick:()=>  router.push('/#about')},
+        // {name:'Feedbacks',target:'/#feedback',offset:-60},
+        {name:'Contact us',target:'contactUS',offset:-60,onclick:()=>  router.push('/#contactUS')},
+      ];
   return (
-    <section className="mx-auto hidden lg:flex flex w-screen h-16 max-w-screen-xl items-center gap-8 px-4 lg:px-6 lg:px-8 justify-between">
+    <section className="mx-auto  hidden lg:flex  w-screen h-16 max-w-screen-xl items-center gap-8 px-4  lg:px-8 justify-between">
     <div className="flex gap-4 px-3  items-center justify-between">
       
       <a className=" block text-teal-600" href="#">
@@ -37,17 +46,22 @@ const links =[
           <ul className="flex items-center gap-6 text-sm">
           {links.map((link,index)=>{
               return(        <li className="  text-gray-500 transition hover:text-gray-500/75">
-                {/* <ScrollLink 
+                <ScrollLink 
+                onClick={path.length>1?
+                  //TODO: after release m7tag check  
+                 link.onclick:null
+                }
                 className='pb-2 border-b-2 border-gray-900'
                 offset={link.offset}
                 to={link.target}
                 smooth 
                 spy
+                
                 key={index}
                 activeClass='active'>
                   {link.name}
-                  </ScrollLink> */}
-                  <Link  className='pb-2 border-b-2 border-gray-900'
+                  </ScrollLink>
+                  {/* <Link  className='pb-2 border-b-2 border-gray-900'
                 offset={link.offset}
                 reloadCurrent={true}
                 // replace={true}
@@ -59,7 +73,7 @@ const links =[
                 activeClass='active'>
                   {link.name}
                   
-                  </Link>
+                  </Link> */}
   
                 
                 {/* <a className="text-gray-500 transition hover:text-gray-500/75" href="#ourProducts"> Products </a> */}

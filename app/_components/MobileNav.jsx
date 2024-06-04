@@ -4,6 +4,10 @@ import Image from 'next/image'
 import{Link as ScrollLink } from 'react-scroll';
 import DropDownMenu from './DropDownMenu'
 import { IoMenuSharp } from "react-icons/io5";
+import { usePathname } from 'next/navigation';
+import { useRouter } from  'next/navigation';
+
+
 
 import { useState } from 'react'
 // const links =[
@@ -14,15 +18,37 @@ import { useState } from 'react'
 //   {name:'Contact us',target:'contactUS',offset:-60},
 
 // ]
-const links =[
-  {name:'Categories',target:'/#ourCategories',offset:-60},
-  // {name:'Finished projects',target:'/#latestProjects',offset:-60},
-  {name:'About',target:'/#about',offset:-60},
-  // {name:'Feedbacks',target:'/#feedback',offset:-60},
-  {name:'Contact us',target:'/#contactUS',offset:-60},
-]
 
 function MobileNav() {
+  const links =[
+    {name:'Home',target:'heroSec',offset:-60 ,onclick:()=>
+      router.push('/#heroSec')
+   
+    
+  },
+    {name:'Categories',target:'ourCategories',offset:-60 ,
+    onclick:()=>
+      router.push('/#ourCategories')
+  },
+    // {name:'Finished projects',target:'/#latestProjects',offset:-60},
+    {name:'About',target:'about',offset:-60,
+    onclick:()=>
+      router.push('/#about')
+  },
+    
+    // {name:'Feedbacks',target:'/#feedback',offset:-60},
+    {name:'Contact us',target:'contactUS',offset:-60,
+    onclick:()=>
+      router.push('/#contactUS')
+
+    
+  },
+  ];
+  const path= usePathname();
+  console.log(path.length);
+  const router= useRouter();
+
+
     const [toggleDropDown, settoggleDropDown] = useState(false);
   return (
     <div className='lg:hidden w-full'>
@@ -59,22 +85,46 @@ function MobileNav() {
            {toggleDropDown && (<div className="dropdown justify-center items-center bg-gray-800">
            {links.map((link,index)=>{
               return(        <li className=" list-none p-3 text-gray-500 transition hover:text-gray-500/75">
-                {/* <ScrollLink 
-                onClick={()=>settoggleDropDown((prev)=>!prev)}
+                <ScrollLink 
+                onClick={()=>{
+
+                  settoggleDropDown((prev)=>!prev)
+                  if (path.length>1){           
+                    console.log('here')
+                    router.push(`/#${link.target}`)
+                  }
+                }
+                }
+                //  onClick={
+                //   path.length>1?
+                //   //TODO: after release m7tag check  
+                //  link.onclick:null
+              
+                // }
+                // onClick={()=>{
+                //   path.length>1?
+                // //   //TODO: after release m7tag check  
+                //  link.onclick:null;
+                //  settoggleDropDown((prev)=>!prev)
+                // }}
+                // onClick={()=>settoggleDropDown((prev)=>!prev)}
                 className='pb-2 border-b-2 border-gray-900'
                 offset={link.offset}
                 to={link.target}
                 smooth 
                 spy
                 key={index}
-                >
+                duration={1500}
+      delay={500}
+                activeClass='inActive'>
+
                   {link.name}
-                  </ScrollLink> */}
+                  </ScrollLink>
                   {/* <Link offset={link.offset} href={`#${link.target}`} className="dropdown_link" 
             onClick={()=>settoggleDropDown(false)}>{link.name}</Link> */}
   
                 
-  <Link  className='pb-2 border-b-2 border-gray-900'
+  {/* <Link  className='pb-2 border-b-2 border-gray-900'
                 offset={link.offset}
                 reloadCurrent={true}
                 // replace={true}
@@ -87,7 +137,7 @@ function MobileNav() {
                 activeClass='active'>
                   {link.name}
                   
-                  </Link>
+                  </Link> */}
 
                 {/* <a className="text-gray-500 transition hover:text-gray-500/75" href="#ourProducts"> Products </a> */}
               </li>);

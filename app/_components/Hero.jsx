@@ -9,7 +9,7 @@ import { fadeIn } from '../variants';
 
 function Hero() {
   return (
-    <section className=" text-white">
+    <section id='heroSec'  className=" text-white h-screen ">
       <div className='grid-cols-1 lg:grid-cols-2 flex w-full   h-screen items-stretch justify-center lg:justify-normal  bg-smallHero bg-cover lg:bg-hero bg-center lg:bg-cover'>
 
   <div className="px-4 mt-20 lg:mt-20 items-center flex lg:basis-3/5 py-32 h-screen lg:flex ">
