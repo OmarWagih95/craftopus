@@ -6,6 +6,7 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 
 
 function CategoriesCard({category}) {
+  console.log(category.categoryID)
     return (
         <Link href={`/Category-products/${category.categoryID}`}><div className='rounded-t-lg px-1 py-1 bg-gray-800 h-[350px] hover:border-2 border-purple-600 '>
         <Image alt={''} width={400} height={400} className='h-[240px] object-cover'  src={category.image}/>

@@ -8,9 +8,21 @@ import products from '@/app/_utils/products';
 import Categories from '@/app/_utils/Categories';
 
 function page({params}) {
+  console.log(params.categoryName);
   const category=Categories.find((element)=>{
     return element.categoryID==params.categoryName
   })
+// const list=[];
+//   const productList=products.map((element)=>{
+//     console.log(params.categoryName);
+//     console.log(element.categoryID);
+//     if(element.categoryID===params.categoryName){
+//       list.concat(element);
+//     }
+//     console.log(list.length);
+//     return list ;
+//   }
+// )
   console.log(category.categoryID);
   const path=usePathname()
 
@@ -49,7 +61,7 @@ function page({params}) {
       <h1 className='mt-6 lg:mb-8 text-white font-bold text-xl lg:text-2xl mb-3'>
         {category.categoryName.split('%')[0]}
       </h1>
-      <ProductList productList={products}/>
+      <ProductList productList={products} categoryID={category.categoryID}/>
       </div>
     </div>
   )
