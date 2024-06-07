@@ -26,6 +26,22 @@ function page() {
   )
   const[submit,setSubmit]=useState(false);
   const[data,setData]=useState(false);
+  const sendEmail= async()=> {
+    const res =await fetch ('/api/send',{
+      method:'POST',
+      body:JSON.stringify(
+        {
+          name:value.name,
+          address:value.address,
+          whatsappNumber:value.whatsappNumber,
+          notes:value.notes,
+          cart:cart,
+          total:total
+        }
+      ),
+      
+    })
+  }
   useEffect(() => {
     if(Object.keys(errors).length===0 && data){
       setSubmit(true);
@@ -62,6 +78,14 @@ function page() {
         deposite:total*0.4
       }
     };
+    setCart([]);
+    try{
+
+      sendEmail();
+    }
+    catch(e){
+      console.log(e)
+    }
         Swal.fire({
       background:'#1F2937',
       color:'white',
@@ -91,6 +115,7 @@ function page() {
   // router.push('/#ourCategories');
   // })
   }
+
 
 
   return (
