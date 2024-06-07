@@ -16,9 +16,8 @@ import React from "react";
 
 
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "";
+const baseUrl = `${process.env.VERCEL_URL}`
+  
 
 export const EmailTemplate = ({ userName,address,whatsappNumber,notes,cart,total }) => (
   <Html>
@@ -46,7 +45,7 @@ export const EmailTemplate = ({ userName,address,whatsappNumber,notes,cart,total
           <Row style={{paddingTop:"20px",paddingBottom:"20px", }}>
             <Column>
               <Img
-                src={`${baseUrl}${item.imgUrl}`}
+                src={`${baseUrl}/${item.imgUrl}`}
                 alt={item.title}
                 style={{ float: "left" }}
                 width="260px"
