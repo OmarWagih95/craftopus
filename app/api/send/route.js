@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 import { EmailTemplate } from '../../_components/email-template';
-const resend = new Resend(re_Ly2gqh3R_8dE4A5iZYdVkmwJQrUTXkbAS);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
   const {cart,total, name,whatsappNumber,notes,address} =await request.json()
