@@ -2,7 +2,7 @@
 const nextConfig = {
     images:{
         domains:[
-            "res.cloudinary.com","gmail.com","resend.com","google.com"
+            "res.cloudinary.com","gmail.com","resend.com","google.com","utfs.io"
         ]
     }
 };

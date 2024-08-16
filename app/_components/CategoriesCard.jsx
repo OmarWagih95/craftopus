@@ -6,10 +6,11 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 
 
 function CategoriesCard({category}) {
-  console.log(category.categoryID)
+  console.log(category._id)
     return (
-        <Link href={`/Category-products/${category.categoryID}`}><div className='rounded-t-lg px-1 py-1 bg-gray-800 h-[350px] hover:border-2 border-purple-600 '>
-        <Image alt={''} width={400} height={400} className='h-[240px] object-cover'  src={category.image}/>
+        <Link href={`/Category-products/${category._id}/${category.categoryName}`}>
+          <div className='rounded-t-lg px-1 py-1 bg-gray-800 h-[350px] hover:border-2 border-purple-600 '>
+        <Image alt={''} width={400} height={400} className='h-[240px] object-cover'  src={category.imgUrl}/>
         <div className='flex-col text-white p-2  items-center text-center justify-center'>
         <div className='flex flex-col justify-center items-center'>
           <h2  className='mb-3 font-semibold text-lg '>

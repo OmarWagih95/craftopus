@@ -17,14 +17,14 @@ function ProductInfo(params) {
   const {cart,setCart}=useContext(cartContext);
 
   // console.log(params.product.attributes?.description[0].children[0].text)
-  console.log(`${params.product.id} hna`);
+  console.log(`${params.product.data?._id} hna`);
   return (
     params.product?
     <div className='text-white items-center justify-items-center justify-center'>
-      <h2 className='font-bold text-[20px] justify-items-center'>{params.product.name}</h2>
+      <h2 className='font-bold text-[20px] justify-items-center'>{params.product.data?.productName}</h2>
       <h2 className='text-gray-400 text-[16px]'>{params.categoryName}</h2>
-      <h2 className='mt-5 font-light'>{params.product.description}</h2>
-      <h2 className='text-white text-[26px] font-bold'>{params.product.price} <span className='text-purple-700'>$</span>
+      <h2 className='mt-5 font-light'>{params.product.data?.description}</h2>
+      <h2 className='text-white text-[26px] font-bold'>{params.product.data?.price} <span className='text-purple-700'>$</span>
 </h2>
 {/* <div className='grid  justify-items-center'> */}
 <div className='flex flex-row lg:flex-col items-start justify-between'>
@@ -48,11 +48,11 @@ function ProductInfo(params) {
   if(productQuantity>0){
       setCart(oldCart=>[...oldCart,{
         
-        title:params.product.name,
-        imgUrl:params.product.images[0],
-        productID:params.product.id,
+        title:params.product.data.productName,
+        imgUrl:params.product.data.imagesUrl[0],
+        productID:params.product.data._id,
         quantity:productQuantity,
-        price:params.product.price
+        price:params.product.data.price
       }])
       console.log('done adding succesfully');
       // toast("your product added to cart successfully");
