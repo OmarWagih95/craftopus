@@ -3,8 +3,8 @@ import { EmailTemplate } from '../../_components/email-template';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
-  const {cart,total, name,whatsappNumber,notes,address} =await request.json()
-
+  const {cart,total,name,whatsappNumber,notes,address} =await request.json()
+      console.log(name)
   try {
     const { data, error } = await resend.emails.send({
       from: 'onboarding@resend.dev',

@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Router } from 'next/router'
 import { useRouter } from 'next/navigation'
 import validation from '@/app/_utils/Validation'
+import axios from 'axios'
 
 
 
@@ -42,6 +43,7 @@ function page() {
       
     })
   }
+
   useEffect(() => {
     if(Object.keys(errors).length===0 && data){
       setSubmit(true);
@@ -65,19 +67,18 @@ function page() {
   // var notes;
     var total=0;
     const{cart,setCart}=useContext(cartContext)
-  const confirmOrder_= ()=>{
+  const confirmOrder_=async ()=>{
     const data={
-      data:{
-
-        Name:value.name,
+        name:value.name,
         total:total,
-        products:{products:cart},
+        products:cart,
         whatsappNumber:value.whatsappNumber,
         notes:value.notes,
         address:value.address,
         deposite:total*0.4
-      }
     };
+    const res= await axios.post('/api/orders',data)
+    console.log(res);
     setCart([]);
     try{
 
