@@ -24,6 +24,7 @@ export async function GET(req){
         if(test){
             console.log('hna')
             const res= await categoriesModel.findById(test);
+            console.log(res.data)
             return NextResponse.json(res)
         }
         else{

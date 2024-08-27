@@ -14,6 +14,7 @@ function page({params}) {
   const router = useRouter()
   console.log(params)
   console.log(params.category[0])
+  const [category,setCategory]= useState({})
   const categoryID=params.category[0];
   const categoryName=params.category[1];
   // const { category, categoryID } = router.query;
@@ -29,11 +30,17 @@ function page({params}) {
   
     setcategoryProducts(res.data);
       console.log(res);
-    
-    // }
+      
+      // }
+    }
+    const fetchCategoryByID= async () => {
+      const res = await axios('/api/categories',{params:{categoryID:categoryID}})
+      setCategory(res.data);
+      console.log(res.data?.categorName);
   }
   useEffect(() => {
     fetchCategoryProducts();
+    fetchCategoryByID()
   }, [])
 
   // const category=Categories.find((element)=>{
@@ -81,11 +88,11 @@ function page({params}) {
  <div className='flex px-10 lg:px-20 mt-20 justify-start w-screen'>
   
   {/* <BreadCrumb  path={path} categorName={params.categoryName.split('%')[0]} /> */}
-  <BreadCrumb  path={path} categorName={categoryName} />
+  <BreadCrumb  path={path} categorName={category.categoryName} />
  </div>
       {/* <ProductList productList={productList}/> */}
       <h1 className='mt-6 lg:mb-8 text-white font-bold text-xl lg:text-2xl mb-3'>
-        {categoryName}
+        {category.categoryName}
         {/* {categoryName.split('%')[0]} */}
       </h1>
       {categoryProducts[0]?
