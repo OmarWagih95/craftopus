@@ -33,7 +33,7 @@ function Hero() {
          whileInView={'show'}
          viewport={{once:false,amount:0.2}}
       className="mx-auto mt-4 max-w-xl text-xl lg:text-2xl/relaxed">
-don't waist time      </motion.p>
+Don't waist time      </motion.p>
 
       <motion.div 
               variants={fadeIn('down',0.9)}

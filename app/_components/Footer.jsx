@@ -27,7 +27,7 @@ function Footer() {
             </li> */}
             <li className="my-2">
                 <a className="text-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition-colors duration-200" href="#">
-                    Whatsapp
+                    WhatsApp
                 </a>
             </li>
         </ul>
@@ -52,7 +52,7 @@ function Footer() {
   
         </div>
         <div class="text-center text-gray-500 dark:text-gray-200 pt-10 sm:pt-12 font-light flex items-center justify-center">
-            this website is created with all passion by developer/omar wagih
+            This website is created with all passion by developer/omar wagih
         </div>
     </div>
 </footer>
